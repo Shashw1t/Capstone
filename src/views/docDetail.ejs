@@ -1,0 +1,7 @@
+<h2>Document Details</h2>
+<p><strong>File Name:</strong> <%= doc.originalName %></p>
+<p><strong>Uploaded At:</strong> <%= doc.uploadedAt.toLocaleString() %></p>
+<p><strong>MIME Type:</strong> <%= doc.mimetype %></p>
+<p><strong>Extracted Text:</strong></p>
+<pre><%= doc.extractedText %></pre>
+<a href="/user/dashboard" class="btn btn-secondary">Back to Dashboard</a>

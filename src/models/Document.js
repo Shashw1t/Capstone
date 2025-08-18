@@ -7,6 +7,7 @@ const documentSchema = new mongoose.Schema({
     path: String,
     mimetype: String,
     size: Number,
+    extractedText: String,
     uploadedAt: { type:Date, default: Date.now }
 });
 

@@ -1,0 +1,337 @@
+.practice-section {
+  background: white;
+}
+
+.practice-content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-color);
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.category-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.problem-count {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 5px;
+}
+
+.difficulty {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.topics-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.topic-tag {
+  background: #f8f9fa;
+  color: #666;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.practice-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.practice-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.practice-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.features-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #2f8d46;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+}
+
+.feature-item p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.recent-problems {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.recent-problems h4 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #2f8d46;
+}
+
+.problems-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.problem-item {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.problem-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.problem-info h5 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.problem-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.difficulty {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.difficulty.easy {
+  background: #d4edda;
+  color: #155724;
+}
+
+.difficulty.medium {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.difficulty.hard {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.acceptance {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.problem-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #e8f5e8;
+  color: #2f8d46;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.solve-btn {
+  background: #2f8d46;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.solve-btn:hover {
+  background: #236b37;
+}
+
+.view-all-problems {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2f8d46;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.practice-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.stat-item {
+  background: linear-gradient(135deg, #2f8d46, #1a5d2e);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.stat-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .practice-features {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .category-card {
+    padding: 25px 20px;
+  }
+
+  .topics-list {
+    gap: 6px;
+  }
+
+  .topic-tag {
+    font-size: 0.75rem;
+  }
+
+  .problem-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .solve-btn {
+    align-self: flex-end;
+  }
+
+  .practice-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-item {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .recent-problems {
+    padding: 20px 15px;
+  }
+}

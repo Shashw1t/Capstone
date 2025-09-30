@@ -1,0 +1,17 @@
+.home {
+  min-height: 100vh;
+}
+
+.home > * {
+  margin-bottom: 0;
+}
+
+.home > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .home > *:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

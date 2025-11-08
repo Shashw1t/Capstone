@@ -1,14 +1,39 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Search, Menu, X, User, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Search, Menu, X, User, ChevronDown, LogOut } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const authStatus = localStorage.getItem('isAuthenticated') === 'true';
+      const storedUsername = localStorage.getItem('username') || '';
+      setIsAuthenticated(authStatus);
+      setUsername(storedUsername);
+    };
+
+    checkAuth();
+    // Listen for storage changes to update auth status
+    window.addEventListener('storage', checkAuth);
+    return () => window.removeEventListener('storage', checkAuth);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAuthenticated');
+    localStorage.removeItem('username');
+    setIsAuthenticated(false);
+    setUsername('');
+    navigate('/login');
+  };
 
   return (
     <nav className="navbar">
@@ -75,9 +100,45 @@ const Navbar = () => {
             <Search size={20} />
           </button>
           
-          <Link to="/login" className="user-btn">
-            <User size={20} />
-          </Link>
+          {isAuthenticated ? (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ 
+                color: '#2f8d46', 
+                fontWeight: '500', 
+                fontSize: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}>
+                <User size={16} />
+                {username}
+              </span>
+              <button 
+                onClick={handleLogout}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  padding: '6px 12px',
+                  backgroundColor: '#dc2626',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  fontSize: '12px',
+                  fontWeight: '500'
+                }}
+                title="Logout"
+              >
+                <LogOut size={14} />
+                Logout
+              </button>
+            </div>
+          ) : (
+            <Link to="/login" className="user-btn">
+              <User size={20} />
+            </Link>
+          )}
 
           <button className="menu-toggle" onClick={toggleMenu}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

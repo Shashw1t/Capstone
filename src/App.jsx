@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
 // Import real pages
+import Login from './pages/Login';
 import Courses from './pages/Courses';
 import Practice from './pages/Practice';
 import Articles from './pages/Articles';
@@ -207,23 +209,35 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/problem/:problemId" element={<ProblemSolver />} />
+          {/* Login Route - Public */}
+          <Route path="/login" element={<Login />} />
+          
+          {/* Problem Solver Route - Protected */}
+          <Route path="/problem/:problemId" element={
+            <ProtectedRoute>
+              <ProblemSolver />
+            </ProtectedRoute>
+          } />
+          
+          {/* Main Application Routes - Protected */}
           <Route path="*" element={
-            <>
-              <Navbar />
-              <main>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/courses" element={<Courses />} />
-                  <Route path="/practice" element={<Practice />} />
-                  <Route path="/articles" element={<Articles />} />
-                  <Route path="/jobs" element={<Jobs />} />
-                  <Route path="/student-chapter" element={<StudentChapter />} />
-                  <Route path="/contest" element={<Contest />} />
-                </Routes>
-              </main>
-              <Footer />
-            </>
+            <ProtectedRoute>
+              <>
+                <Navbar />
+                <main>
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/courses" element={<Courses />} />
+                    <Route path="/practice" element={<Practice />} />
+                    <Route path="/articles" element={<Articles />} />
+                    <Route path="/jobs" element={<Jobs />} />
+                    <Route path="/student-chapter" element={<StudentChapter />} />
+                    <Route path="/contest" element={<Contest />} />
+                  </Routes>
+                </main>
+                <Footer />
+              </>
+            </ProtectedRoute>
           } />
         </Routes>
       </div>

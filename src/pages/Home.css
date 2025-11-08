@@ -15,3 +15,8 @@
     margin-bottom: 30px;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .home {
+  background-color: #121212;
+}

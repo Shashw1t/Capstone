@@ -565,3 +565,399 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode for All Pages */
+.dark-mode .page {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+/* Override inline styles for dark mode - Use high specificity */
+.dark-mode [style*="background"] {
+  background-color: #121212 !important;
+}
+
+.dark-mode [style*="backgroundColor"][style*="#f8f9fa"],
+.dark-mode [style*="backgroundColor"][style*="#fff7ed"],
+.dark-mode [style*="backgroundColor"][style*="#f3f4f6"],
+.dark-mode [style*="backgroundColor"][style*="white"],
+.dark-mode [style*="backgroundColor"][style*="#ffffff"] {
+  background-color: #121212 !important;
+}
+
+.dark-mode [style*="backgroundColor"][style*="#f9fafb"],
+.dark-mode [style*="backgroundColor"][style*="#f0f0f0"] {
+  background-color: #1e1e1e !important;
+}
+
+/* White card backgrounds to dark */
+.dark-mode [style*="background"][style*="white"],
+.dark-mode [style*="background"][style*="#fff"] {
+  background: #1e1e1e !important;
+  background-color: #1e1e1e !important;
+}
+
+/* Dark text overrides */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #e5e5e5 !important;
+}
+
+.dark-mode p,
+.dark-mode span,
+.dark-mode div {
+  color: inherit;
+}
+
+.dark-mode [style*="color"][style*="#718096"],
+.dark-mode [style*="color"][style*="#666"],
+.dark-mode [style*="color"][style*="#6b7280"],
+.dark-mode [style*="color"][style*="#2d3748"] {
+  color: #a3a3a3 !important;
+}
+
+.dark-mode .page-header {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+  color: #e5e5e5;
+}
+
+.dark-mode .page-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .page-description {
+  color: #a3a3a3;
+}
+
+/* Search Bar Dark Mode */
+.dark-mode .search-bar input {
+  background-color: #1e1e1e;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.dark-mode .search-bar input::placeholder {
+  color: #737373;
+}
+
+.dark-mode .search-bar svg {
+  color: #737373;
+}
+
+/* Filter Buttons Dark Mode */
+.dark-mode .filter-btn {
+  background-color: #2d2d2d;
+  color: #a3a3a3;
+  border: 1px solid #404040;
+}
+
+.dark-mode .filter-btn:hover,
+.dark-mode .filter-btn.active {
+  background-color: #3ba55d;
+  color: white;
+  border-color: #3ba55d;
+}
+
+/* Card Dark Mode */
+.dark-mode .course-card,
+.dark-mode .article-card,
+.dark-mode .job-card,
+.dark-mode .chapter-card,
+.dark-mode .contest-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+  color: #e5e5e5;
+}
+
+.dark-mode .course-card:hover,
+.dark-mode .article-card:hover,
+.dark-mode .job-card:hover,
+.dark-mode .chapter-card:hover,
+.dark-mode .contest-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 8px 30px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .card-title,
+.dark-mode .course-title,
+.dark-mode .article-title,
+.dark-mode .job-title,
+.dark-mode .chapter-name,
+.dark-mode .contest-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .card-description,
+.dark-mode .course-description,
+.dark-mode .article-excerpt,
+.dark-mode .job-description,
+.dark-mode .chapter-description,
+.dark-mode .contest-description {
+  color: #a3a3a3;
+}
+
+/* Stats and Meta Info Dark Mode */
+.dark-mode .stats-item,
+.dark-mode .meta-item {
+  color: #a3a3a3;
+}
+
+.dark-mode .stat-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+/* Badges and Tags Dark Mode */
+.dark-mode .badge,
+.dark-mode .tag,
+.dark-mode .difficulty-tag,
+.dark-mode .status-tag {
+  background-color: #2d2d2d;
+  color: #a3a3a3;
+  border: 1px solid #404040;
+}
+
+.dark-mode .tag-easy,
+.dark-mode .difficulty.easy {
+  background-color: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border-color: #4ade80;
+}
+
+.dark-mode .tag-medium,
+.dark-mode .difficulty.medium {
+  background-color: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+  border-color: #fbbf24;
+}
+
+.dark-mode .tag-hard,
+.dark-mode .difficulty.hard {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Sidebar Dark Mode */
+.dark-mode .sidebar,
+.dark-mode .filter-sidebar {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .sidebar-title {
+  color: #e5e5e5;
+  border-bottom-color: #2d2d2d;
+}
+
+/* List Items Dark Mode */
+.dark-mode .problem-item,
+.dark-mode .list-item {
+  border-bottom-color: #2d2d2d;
+}
+
+.dark-mode .problem-item:hover,
+.dark-mode .list-item:hover {
+  background-color: #2d2d2d;
+}
+
+/* Buttons Dark Mode */
+.dark-mode .btn-secondary {
+  background-color: #2d2d2d;
+  color: #e5e5e5;
+  border: 1px solid #404040;
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: #404040;
+}
+
+.dark-mode .btn-outline {
+  background-color: transparent;
+  color: #e5e5e5;
+  border: 1px solid #404040;
+}
+
+.dark-mode .btn-outline:hover {
+  background-color: #2d2d2d;
+  border-color: #3ba55d;
+}
+
+/* Table Dark Mode */
+.dark-mode table {
+  background-color: #1e1e1e;
+  color: #e5e5e5;
+}
+
+.dark-mode th {
+  background-color: #2d2d2d;
+  color: #e5e5e5;
+  border-color: #404040;
+}
+
+.dark-mode td {
+  border-color: #2d2d2d;
+  color: #a3a3a3;
+}
+
+.dark-mode tr:hover {
+  background-color: #2d2d2d;
+}
+
+/* Section Backgrounds */
+.dark-mode section {
+  background-color: #121212;
+}
+
+.dark-mode .section-light {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .section-dark {
+  background-color: #0d0d0d;
+}
+
+/* Code/Pre Dark Mode */
+.dark-mode pre,
+.dark-mode code {
+  background-color: #0d0d0d;
+  color: #e5e5e5;
+  border-color: #2d2d2d;
+}
+
+/* Modal/Dialog Dark Mode */
+.dark-mode .modal,
+.dark-mode .dialog {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .modal-header {
+  border-bottom-color: #2d2d2d;
+}
+
+.dark-mode .modal-footer {
+  border-top-color: #2d2d2d;
+}
+
+/* Links Dark Mode */
+.dark-mode a {
+  color: #4ade80;
+}
+
+.dark-mode a:hover {
+  color: #3ba55d;
+}
+
+/* Dividers Dark Mode */
+.dark-mode hr,
+.dark-mode .divider {
+  border-color: #2d2d2d;
+  background-color: #2d2d2d;
+}
+
+/* Dark Mode Styles */
+.dark-mode .page {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+.dark-mode .search-bar input {
+  background-color: #1e1e1e;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.dark-mode .search-bar input::placeholder {
+  color: #737373;
+}
+
+.dark-mode .filter-btn {
+  background-color: #1e1e1e;
+  color: #e5e5e5;
+  border-color: #404040;
+}
+
+.dark-mode .filter-btn.active {
+  background-color: #3ba55d;
+  border-color: #3ba55d;
+  color: white;
+}
+
+.dark-mode .filter-btn:hover {
+  background-color: #2d2d2d;
+}
+
+.dark-mode .course-card,
+.dark-mode .article-card,
+.dark-mode .job-card,
+.dark-mode .problem-card,
+.dark-mode .chapter-card,
+.dark-mode .contest-card {
+  background-color: #1e1e1e;
+  border-color: #2d2d2d;
+}
+
+.dark-mode .course-card:hover,
+.dark-mode .article-card:hover,
+.dark-mode .job-card:hover,
+.dark-mode .problem-card:hover,
+.dark-mode .chapter-card:hover,
+.dark-mode .contest-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 6px 30px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .course-card h3,
+.dark-mode .article-card h3,
+.dark-mode .job-card h3,
+.dark-mode .problem-title,
+.dark-mode .chapter-card h3,
+.dark-mode .contest-card h3 {
+  color: #e5e5e5;
+}
+
+.dark-mode .course-card p,
+.dark-mode .article-card p,
+.dark-mode .job-card p {
+  color: #a3a3a3;
+}
+
+.dark-mode .stats-box {
+  background-color: #1e1e1e;
+  border-color: #2d2d2d;
+}
+
+.dark-mode .stat-value {
+  color: #e5e5e5;
+}
+
+.dark-mode .stat-label {
+  color: #a3a3a3;
+}
+
+.dark-mode .page-header {
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.dark-mode .page-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .tabs {
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.dark-mode .tab {
+  color: #a3a3a3;
+}
+
+.dark-mode .tab.active {
+  color: #4ade80;
+  border-bottom-color: #3ba55d;
+}

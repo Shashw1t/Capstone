@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Users, Calendar, Award, Search, MapPin, Star, TrendingUp, BookOpen, Code, Trophy } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const StudentChapter = () => {
+  const { isDarkMode } = useTheme();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTier, setSelectedTier] = useState('all');
 

@@ -198,3 +198,50 @@
     font-size: 1rem;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .stats-section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .section-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .section-subtitle {
+  color: #a3a3a3;
+}
+
+.dark-mode .stat-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .stat-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 10px 40px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .stat-number {
+  color: #e5e5e5;
+}
+
+.dark-mode .stat-label {
+  color: #a3a3a3;
+}
+
+.dark-mode .achievement-badges {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+.dark-mode .badge {
+  background-color: #1e1e1e;
+  border-color: #404040;
+  color: #a3a3a3;
+}
+
+.dark-mode .badge:hover {
+  border-color: #3ba55d;
+  background-color: rgba(59, 165, 93, 0.1);
+}

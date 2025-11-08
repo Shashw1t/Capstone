@@ -335,3 +335,56 @@
     padding: 20px 15px;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .practice-section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .features-image {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-mode .features-content h3 {
+  color: #e5e5e5;
+}
+
+.dark-mode .features-content p {
+  color: #a3a3a3;
+}
+
+.dark-mode .feature-item {
+  color: #a3a3a3;
+}
+
+.dark-mode .recent-problems {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .problem-item {
+  border-bottom-color: #2d2d2d;
+}
+
+.dark-mode .problem-item:hover {
+  background-color: #2d2d2d;
+}
+
+.dark-mode .problem-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .difficulty.easy {
+  background: rgba(74, 222, 128, 0.1);
+  color: #4ade80;
+}
+
+.dark-mode .difficulty.medium {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+}
+
+.dark-mode .difficulty.hard {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}

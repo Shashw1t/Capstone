@@ -15,182 +15,65 @@ import ProblemSolver from './pages/ProblemSolver';
 import './App.css';
 
 const Home = () => (
-  <div>
-    <div style={{
-      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-      color: 'white',
-      padding: '100px 20px',
-      textAlign: 'center'
-    }}>
-      <h1 style={{
-        fontSize: '3.5rem',
-        marginBottom: '20px',
-        fontWeight: 'bold'
-      }}>
+  <div className="home-wrapper">
+    <div className="app-hero-section">
+      <h1 className="app-hero-title">
         A Computer Science Portal for Geeks
       </h1>
-      <p style={{
-        fontSize: '1.3rem',
-        marginBottom: '30px',
-        opacity: 0.9
-      }}>
+      <p className="app-hero-description">
         Learn, Practice & Prepare for interviews with our comprehensive platform
       </p>
-      <div style={{
-        display: 'flex',
-        gap: '15px',
-        justifyContent: 'center',
-        flexWrap: 'wrap'
-      }}>
-        <button style={{
-          backgroundColor: '#2d8f2d',
-          color: 'white',
-          padding: '15px 30px',
-          border: 'none',
-          borderRadius: '8px',
-          fontSize: '1.1rem',
-          cursor: 'pointer',
-          fontWeight: '600'
-        }}>
+      <div className="app-hero-buttons">
+        <button className="app-hero-btn app-hero-btn-primary">
           Start Learning
         </button>
-        <button style={{
-          backgroundColor: 'transparent',
-          color: 'white',
-          padding: '15px 30px',
-          border: '2px solid white',
-          borderRadius: '8px',
-          fontSize: '1.1rem',
-          cursor: 'pointer',
-          fontWeight: '600'
-        }}>
+        <button className="app-hero-btn app-hero-btn-secondary">
           Explore Courses
         </button>
       </div>
     </div>
 
     {/* Stats Section */}
-    <div style={{
-      padding: '60px 20px',
-      backgroundColor: '#f8f9fa'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '30px',
-        textAlign: 'center'
-      }}>
-        <div>
-          <h3 style={{
-            fontSize: '2.5rem',
-            color: '#2d8f2d',
-            marginBottom: '10px',
-            fontWeight: 'bold'
-          }}>10M+</h3>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>Students Learning</p>
+    <div className="app-stats-section">
+      <div className="app-stats-grid">
+        <div className="app-stat-card">
+          <h3 className="app-stat-number">10M+</h3>
+          <p className="app-stat-label">Students Learning</p>
         </div>
-        <div>
-          <h3 style={{
-            fontSize: '2.5rem',
-            color: '#2d8f2d',
-            marginBottom: '10px',
-            fontWeight: 'bold'
-          }}>5000+</h3>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>Practice Problems</p>
+        <div className="app-stat-card">
+          <h3 className="app-stat-number">5000+</h3>
+          <p className="app-stat-label">Practice Problems</p>
         </div>
-        <div>
-          <h3 style={{
-            fontSize: '2.5rem',
-            color: '#2d8f2d',
-            marginBottom: '10px',
-            fontWeight: 'bold'
-          }}>500+</h3>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>Programming Courses</p>
+        <div className="app-stat-card">
+          <h3 className="app-stat-number">500+</h3>
+          <p className="app-stat-label">Programming Courses</p>
         </div>
-        <div>
-          <h3 style={{
-            fontSize: '2.5rem',
-            color: '#2d8f2d',
-            marginBottom: '10px',
-            fontWeight: 'bold'
-          }}>100+</h3>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>Weekly Contests</p>
+        <div className="app-stat-card">
+          <h3 className="app-stat-number">100+</h3>
+          <p className="app-stat-label">Weekly Contests</p>
         </div>
       </div>
     </div>
 
     {/* Popular Courses Section */}
-    <div style={{
-      padding: '60px 20px',
-      backgroundColor: 'white'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        textAlign: 'center'
-      }}>
-        <h2 style={{
-          fontSize: '2.5rem',
-          marginBottom: '50px',
-          color: '#2d3748'
-        }}>Popular Courses</h2>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '30px'
-        }}>
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            borderRadius: '12px',
-            padding: '30px',
-            textAlign: 'left'
-          }}>
-            <h3 style={{ color: '#2d8f2d', marginBottom: '15px' }}>DSA Self Paced</h3>
-            <p style={{ color: '#666', marginBottom: '20px' }}>Master Data Structures and Algorithms</p>
-            <button style={{
-              backgroundColor: '#2d8f2d',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer'
-            }}>View Details</button>
+    <div className="app-courses-section">
+      <div className="app-courses-container">
+        <h2 className="app-section-title">Popular Courses</h2>
+        <div className="app-courses-grid">
+          <div className="app-course-card">
+            <h3 className="app-course-title">DSA Self Paced</h3>
+            <p className="app-course-description">Master Data Structures and Algorithms</p>
+            <button className="app-course-btn">View Details</button>
           </div>
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            borderRadius: '12px',
-            padding: '30px',
-            textAlign: 'left'
-          }}>
-            <h3 style={{ color: '#2d8f2d', marginBottom: '15px' }}>Complete Interview Preparation</h3>
-            <p style={{ color: '#666', marginBottom: '20px' }}>Crack any coding interview</p>
-            <button style={{
-              backgroundColor: '#2d8f2d',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer'
-            }}>View Details</button>
+          <div className="app-course-card">
+            <h3 className="app-course-title">Complete Interview Preparation</h3>
+            <p className="app-course-description">Crack any coding interview</p>
+            <button className="app-course-btn">View Details</button>
           </div>
-          <div style={{
-            backgroundColor: '#f8f9fa',
-            borderRadius: '12px',
-            padding: '30px',
-            textAlign: 'left'
-          }}>
-            <h3 style={{ color: '#2d8f2d', marginBottom: '15px' }}>System Design</h3>
-            <p style={{ color: '#666', marginBottom: '20px' }}>Learn to design scalable systems</p>
-            <button style={{
-              backgroundColor: '#2d8f2d',
-              color: 'white',
-              padding: '10px 20px',
-              border: 'none',
-              borderRadius: '6px',
-              cursor: 'pointer'
-            }}>View Details</button>
+          <div className="app-course-card">
+            <h3 className="app-course-title">System Design</h3>
+            <p className="app-course-description">Design scalable systems</p>
+            <button className="app-course-btn">View Details</button>
           </div>
         </div>
       </div>
@@ -198,48 +81,48 @@ const Home = () => (
   </div>
 );
 
-const TestFooter = () => (
-  <footer style={{background: '#333', color: 'white', padding: '1rem', textAlign: 'center'}}>
-    <p>&copy; 2025 GeeksforGeeks Clone</p>
-  </footer>
+const PlaceholderPage = ({ title }) => (
+  <div className="placeholder-page">
+    <div className="placeholder-content">
+      <h1 className="placeholder-title">{title}</h1>
+      <p className="placeholder-text">This page is under construction</p>
+    </div>
+  </div>
 );
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-          {/* Login Route - Public */}
-          <Route path="/login" element={<Login />} />
-          
-          {/* Problem Solver Route - Protected */}
-          <Route path="/problem/:problemId" element={
-            <ProtectedRoute>
-              <ProblemSolver />
-            </ProtectedRoute>
-          } />
-          
-          {/* Main Application Routes - Protected */}
-          <Route path="*" element={
-            <ProtectedRoute>
-              <>
-                <Navbar />
-                <main>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/courses" element={<Courses />} />
-                    <Route path="/practice" element={<Practice />} />
-                    <Route path="/articles" element={<Articles />} />
-                    <Route path="/jobs" element={<Jobs />} />
-                    <Route path="/student-chapter" element={<StudentChapter />} />
-                    <Route path="/contest" element={<Contest />} />
-                  </Routes>
-                </main>
-                <Footer />
-              </>
-            </ProtectedRoute>
-          } />
-        </Routes>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/courses/*" element={<Courses />} />
+            <Route 
+              path="/practice" 
+              element={
+                <ProtectedRoute>
+                  <Practice />
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/problem/:problemId" 
+              element={
+                <ProtectedRoute>
+                  <ProblemSolver />
+                </ProtectedRoute>
+              } 
+            />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/jobs" element={<Jobs />} />
+            <Route path="/student-chapter" element={<StudentChapter />} />
+            <Route path="/contest" element={<Contest />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
     </Router>
   );

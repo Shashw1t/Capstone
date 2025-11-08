@@ -105,3 +105,30 @@
     gap: 10px;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .featured-articles {
+  background: #121212;
+}
+
+.dark-mode .article-card {
+  background: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .article-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 10px 40px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .article-content h3 {
+  color: #e5e5e5;
+}
+
+.dark-mode .article-excerpt {
+  color: #a3a3a3;
+}
+
+.dark-mode .article-meta span {
+  color: #737373;
+}

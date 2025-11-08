@@ -95,3 +95,29 @@
     padding: 20px;
   }
 }
+/* Dark Mode Styles */
+.dark-mode .trending-topics {
+  background-color: #121212;
+}
+
+.dark-mode .topic-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .topic-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 8px 30px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .topic-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .topic-description {
+  color: #a3a3a3;
+}
+
+.dark-mode .topic-stats span {
+  color: #737373;
+}

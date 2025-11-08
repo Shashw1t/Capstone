@@ -116,3 +116,290 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .App {
+  background-color: #121212;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .btn-secondary {
+  background-color: #2d2d2d;
+  color: #e5e5e5;
+  border: 1px solid #404040;
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: #404040;
+}
+
+/* App Hero Section Styles */
+.home-wrapper {
+  min-height: 100vh;
+}
+
+.app-hero-section {
+  background: linear-gradient(135deg, #2f8d46 0%, #90ee90 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.app-hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.app-hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.app-hero-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-hero-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.app-hero-btn-primary {
+  background-color: #2d8f2d;
+  color: white;
+}
+
+.app-hero-btn-primary:hover {
+  background-color: #236b37;
+  transform: translateY(-2px);
+}
+
+.app-hero-btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.app-hero-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Stats Section */
+.app-stats-section {
+  padding: 60px 20px;
+  background-color: #f8f9fa;
+}
+
+.app-stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.app-stat-card {
+  padding: 20px;
+}
+
+.app-stat-number {
+  font-size: 2.5rem;
+  color: #2d8f2d;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.app-stat-label {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Courses Section */
+.app-courses-section {
+  padding: 60px 20px;
+  background-color: white;
+}
+
+.app-courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2d3748;
+}
+
+.app-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.app-course-card {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.app-course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app-course-title {
+  color: #2d8f2d;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.app-course-description {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.app-course-btn {
+  background-color: #2d8f2d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.app-course-btn:hover {
+  background-color: #236b37;
+}
+
+/* Placeholder Page */
+.placeholder-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-content {
+  text-align: center;
+}
+
+.placeholder-title {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 20px;
+}
+
+.placeholder-text {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Dark Mode for App Hero and Sections */
+.dark-mode .app-hero-section {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+.dark-mode .app-hero-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .app-hero-description {
+  color: #a3a3a3;
+}
+
+.dark-mode .app-hero-btn-primary {
+  background-color: #3ba55d;
+}
+
+.dark-mode .app-hero-btn-primary:hover {
+  background-color: #2f8d46;
+}
+
+.dark-mode .app-hero-btn-secondary {
+  border-color: #a3a3a3;
+  color: #e5e5e5;
+}
+
+.dark-mode .app-hero-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #e5e5e5;
+}
+
+.dark-mode .app-stats-section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .app-stat-number {
+  color: #4ade80;
+}
+
+.dark-mode .app-stat-label {
+  color: #a3a3a3;
+}
+
+.dark-mode .app-courses-section {
+  background-color: #121212;
+}
+
+.dark-mode .app-section-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .app-course-card {
+  background-color: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .app-course-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 8px 30px rgba(59, 165, 93, 0.2);
+}
+
+.dark-mode .app-course-title {
+  color: #4ade80;
+}
+
+.dark-mode .app-course-description {
+  color: #a3a3a3;
+}
+
+.dark-mode .app-course-btn {
+  background-color: #3ba55d;
+}
+
+.dark-mode .app-course-btn:hover {
+  background-color: #2f8d46;
+}
+
+.dark-mode .placeholder-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .placeholder-text {
+  color: #a3a3a3;
+}
+

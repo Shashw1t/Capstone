@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Clock, Calendar, Trophy, Users, DollarSign, Target, TrendingUp, Award, Search, Filter } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Contest = () => {
+  const { isDarkMode } = useTheme();
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');

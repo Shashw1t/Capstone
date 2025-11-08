@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Menu, X, User, ChevronDown, LogOut } from 'lucide-react';
+import { Menu, X, User, ChevronDown, LogOut, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
+  const { isDarkMode, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleSearch = () => setIsSearchOpen(!isSearchOpen);
 
   useEffect(() => {
     const checkAuth = () => {
@@ -94,11 +94,20 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Search and User Actions */}
+        {/* User Actions */}
         <div className="navbar-actions">
-          <button className="search-btn" onClick={toggleSearch}>
-            <Search size={20} />
-          </button>
+          <div className="theme-toggle-switch">
+            <input 
+              type="checkbox" 
+              id="theme-toggle" 
+              checked={isDarkMode}
+              onChange={toggleTheme}
+              aria-label="Toggle dark mode"
+            />
+            <label htmlFor="theme-toggle" className="toggle-label">
+              <span className="toggle-slider"></span>
+            </label>
+          </div>
           
           {isAuthenticated ? (
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -144,23 +153,6 @@ const Navbar = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* Search Bar */}
-        {isSearchOpen && (
-          <div className="search-overlay">
-            <div className="search-container">
-              <input
-                type="text"
-                placeholder="Search for articles, courses, problems..."
-                className="search-input"
-                autoFocus
-              />
-              <button className="search-close" onClick={toggleSearch}>
-                <X size={20} />
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

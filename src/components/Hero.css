@@ -327,3 +327,44 @@
     max-width: 280px;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .hero {
+  background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+}
+
+.dark-mode .hero-title {
+  color: #e5e5e5;
+}
+
+.dark-mode .hero-description {
+  color: #a3a3a3;
+}
+
+.dark-mode .code-window {
+  background: #0d0d0d;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .code-header {
+  background: #0d0d0d;
+  border-bottom: 1px solid #2d2d2d;
+}
+
+.dark-mode .code-content {
+  background: #0d0d0d;
+}
+
+.dark-mode .features-grid {
+  background: transparent;
+}
+
+.dark-mode .feature-card {
+  background: #1e1e1e;
+  border: 1px solid #2d2d2d;
+}
+
+.dark-mode .feature-card:hover {
+  border-color: #3ba55d;
+  box-shadow: 0 8px 30px rgba(59, 165, 93, 0.2);
+}

@@ -220,3 +220,57 @@
     text-align: center;
   }
 }
+
+/* Dark Mode Styles */
+.dark-mode .footer {
+  background-color: #1e1e1e;
+  border-top: 1px solid #2d2d2d;
+}
+
+.dark-mode .footer-section h3 {
+  color: #e5e5e5;
+}
+
+.dark-mode .footer-section p,
+.dark-mode .footer-section a {
+  color: #a3a3a3;
+}
+
+.dark-mode .footer-section a:hover {
+  color: #4ade80;
+}
+
+.dark-mode .newsletter-form input {
+  background-color: #2d2d2d;
+  border-color: #404040;
+  color: #e5e5e5;
+}
+
+.dark-mode .newsletter-form input::placeholder {
+  color: #737373;
+}
+
+.dark-mode .newsletter-form button {
+  background-color: #3ba55d;
+}
+
+.dark-mode .newsletter-form button:hover {
+  background-color: #2f8d46;
+}
+
+.dark-mode .footer-bottom {
+  border-top: 1px solid #2d2d2d;
+}
+
+.dark-mode .copyright {
+  color: #737373;
+}
+
+.dark-mode .social-icon {
+  background-color: #2d2d2d;
+  color: #e5e5e5;
+}
+
+.dark-mode .social-icon:hover {
+  background-color: #3ba55d;
+}

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Search, Calendar, Clock, User, Eye, BookOpen, TrendingUp, Star } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Articles = () => {
+  const { isDarkMode } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -394,7 +396,7 @@ const Articles = () => {
   return (
     <div style={{
       padding: '60px 20px 20px',
-      backgroundColor: '#f8f9fa',
+      backgroundColor: isDarkMode ? '#121212' : '#f8f9fa',
       minHeight: '100vh'
     }}>
       <div style={{
@@ -408,14 +410,14 @@ const Articles = () => {
         }}>
           <h1 style={{
             fontSize: '2.5rem',
-            color: '#2d3748',
+            color: isDarkMode ? '#e5e5e5' : '#2d3748',
             marginBottom: '10px',
             fontWeight: 'bold'
           }}>
             📝 Programming Articles
           </h1>
           <p style={{
-            color: '#718096',
+            color: isDarkMode ? '#a3a3a3' : '#718096',
             fontSize: '1.1rem'
           }}>
             Stay updated with {articles.length}+ articles on latest tech trends and best practices
@@ -424,7 +426,7 @@ const Articles = () => {
 
         {/* Trending Section */}
         <div style={{
-          backgroundColor: '#fff7ed',
+          backgroundColor: isDarkMode ? '#1e1e1e' : '#fff7ed',
           borderLeft: '4px solid #f59e0b',
           padding: '20px',
           marginBottom: '30px',
@@ -437,7 +439,7 @@ const Articles = () => {
             marginBottom: '15px'
           }}>
             <TrendingUp size={20} color="#f59e0b" />
-            <h3 style={{ margin: 0, color: '#92400e' }}>Trending Articles</h3>
+            <h3 style={{ margin: 0, color: isDarkMode ? '#fbbf24' : '#92400e' }}>Trending Articles</h3>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {trendingArticles.map(article => (
@@ -474,7 +476,7 @@ const Articles = () => {
               left: '12px',
               top: '50%',
               transform: 'translateY(-50%)',
-              color: '#6b7280'
+              color: isDarkMode ? '#a3a3a3' : '#6b7280'
             }} />
             <input
               type="text"
@@ -484,11 +486,13 @@ const Articles = () => {
               style={{
                 width: '100%',
                 padding: '12px 12px 12px 45px',
-                border: '2px solid #e5e7eb',
+                border: `2px solid ${isDarkMode ? '#2d2d2d' : '#e5e7eb'}`,
                 borderRadius: '8px',
                 fontSize: '16px',
                 outline: 'none',
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
+                backgroundColor: isDarkMode ? '#1e1e1e' : 'white',
+                color: isDarkMode ? '#e5e5e5' : '#000'
               }}
             />
           </div>
@@ -501,8 +505,8 @@ const Articles = () => {
                 onClick={() => setSelectedCategory(cat)}
                 style={{
                   padding: '8px 16px',
-                  backgroundColor: selectedCategory === cat ? '#2d8f2d' : '#f3f4f6',
-                  color: selectedCategory === cat ? 'white' : '#374151',
+                  backgroundColor: selectedCategory === cat ? '#2d8f2d' : (isDarkMode ? '#2d2d2d' : '#f3f4f6'),
+                  color: selectedCategory === cat ? 'white' : (isDarkMode ? '#e5e5e5' : '#374151'),
                   border: 'none',
                   borderRadius: '20px',
                   cursor: 'pointer',
@@ -520,7 +524,7 @@ const Articles = () => {
         {/* Results Count */}
         <div style={{
           marginBottom: '20px',
-          color: '#6b7280',
+          color: isDarkMode ? '#a3a3a3' : '#6b7280',
           fontSize: '14px'
         }}>
           Showing {filteredArticles.length} of {articles.length} articles
@@ -536,30 +540,30 @@ const Articles = () => {
             <div
               key={article.id}
               style={{
-                backgroundColor: 'white',
+                backgroundColor: isDarkMode ? '#1e1e1e' : 'white',
                 borderRadius: '12px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                boxShadow: isDarkMode ? '0 2px 8px rgba(0,0,0,0.4)' : '0 2px 8px rgba(0,0,0,0.1)',
                 overflow: 'hidden',
                 cursor: 'pointer',
-                border: '1px solid #e5e7eb',
+                border: `1px solid ${isDarkMode ? '#2d2d2d' : '#e5e7eb'}`,
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)';
+                e.currentTarget.style.boxShadow = isDarkMode ? '0 8px 20px rgba(0,0,0,0.6)' : '0 8px 20px rgba(0,0,0,0.15)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+                e.currentTarget.style.boxShadow = isDarkMode ? '0 2px 8px rgba(0,0,0,0.4)' : '0 2px 8px rgba(0,0,0,0.1)';
               }}
             >
               {/* Article Icon */}
               <div style={{
-                backgroundColor: '#f9fafb',
+                backgroundColor: isDarkMode ? '#252525' : '#f9fafb',
                 padding: '30px',
                 textAlign: 'center',
                 fontSize: '48px',
-                borderBottom: '1px solid #e5e7eb'
+                borderBottom: `1px solid ${isDarkMode ? '#2d2d2d' : '#e5e7eb'}`
               }}>
                 {article.image}
               </div>
@@ -582,7 +586,7 @@ const Articles = () => {
                 <h3 style={{
                   fontSize: '1.2rem',
                   marginBottom: '12px',
-                  color: '#1f2937',
+                  color: isDarkMode ? '#e5e5e5' : '#1f2937',
                   lineHeight: '1.4'
                 }}>
                   {article.title}
@@ -590,7 +594,7 @@ const Articles = () => {
 
                 <p style={{
                   fontSize: '0.9rem',
-                  color: '#6b7280',
+                  color: isDarkMode ? '#a3a3a3' : '#6b7280',
                   marginBottom: '15px',
                   lineHeight: '1.6'
                 }}>

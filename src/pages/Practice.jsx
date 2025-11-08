@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Code, Target, Trophy, Search, Filter } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Practice = () => {
   const navigate = useNavigate();
+  const { isDarkMode } = useTheme();
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -81,32 +83,14 @@ const Practice = () => {
   };
 
   return (
-    <div style={{
-      padding: '60px 20px 20px',
-      backgroundColor: '#f8f9fa',
-      minHeight: '100vh'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto'
-      }}>
+    <div className="page practice-page">
+      <div className="container">
         {/* Header */}
-        <div style={{
-          textAlign: 'center',
-          marginBottom: '40px'
-        }}>
-          <h1 style={{
-            fontSize: '2.5rem',
-            color: '#2d3748',
-            marginBottom: '10px',
-            fontWeight: 'bold'
-          }}>
+        <div className="page-header">
+          <h1 className="page-title">
             🎯 Practice Problems
           </h1>
-          <p style={{
-            color: '#718096',
-            fontSize: '1.1rem'
-          }}>
+          <p className="page-description">
             Sharpen your coding skills with {problems.length}+ practice problems. Click on any problem to start solving!
           </p>
         </div>
@@ -115,7 +99,7 @@ const Practice = () => {
         <div style={{ marginBottom: '30px' }}>
           {/* Search Bar */}
           <div style={{ position: 'relative', marginBottom: '20px' }}>
-            <Search size={20} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: '#6b7280' }} />
+            <Search size={20} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: isDarkMode ? '#a3a3a3' : '#6b7280' }} />
             <input
               type="text"
               placeholder="Search problems..."
@@ -124,18 +108,20 @@ const Practice = () => {
               style={{
                 width: '100%',
                 padding: '12px 12px 12px 45px',
-                border: '2px solid #e5e7eb',
+                border: `2px solid ${isDarkMode ? '#2d2d2d' : '#e5e7eb'}`,
                 borderRadius: '8px',
                 fontSize: '16px',
                 outline: 'none',
-                boxSizing: 'border-box'
+                boxSizing: 'border-box',
+                backgroundColor: isDarkMode ? '#1e1e1e' : 'white',
+                color: isDarkMode ? '#e5e5e5' : '#000'
               }}
             />
           </div>
 
           {/* Difficulty Filter */}
           <div style={{ marginBottom: '15px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: isDarkMode ? '#e5e5e5' : '#000' }}>
               <Filter size={18} />
               <strong>Difficulty:</strong>
             </div>
@@ -146,8 +132,8 @@ const Practice = () => {
                   onClick={() => setSelectedDifficulty(diff)}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: selectedDifficulty === diff ? '#2d8f2d' : '#f3f4f6',
-                    color: selectedDifficulty === diff ? 'white' : '#374151',
+                    backgroundColor: selectedDifficulty === diff ? '#2d8f2d' : (isDarkMode ? '#2d2d2d' : '#f3f4f6'),
+                    color: selectedDifficulty === diff ? 'white' : (isDarkMode ? '#e5e5e5' : '#374151'),
                     border: 'none',
                     borderRadius: '20px',
                     cursor: 'pointer',
@@ -164,7 +150,7 @@ const Practice = () => {
 
           {/* Category Filter */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: isDarkMode ? '#e5e5e5' : '#000' }}>
               <Code size={18} />
               <strong>Category:</strong>
             </div>
@@ -175,8 +161,8 @@ const Practice = () => {
                   onClick={() => setSelectedCategory(cat)}
                   style={{
                     padding: '8px 16px',
-                    backgroundColor: selectedCategory === cat ? '#2d8f2d' : '#f3f4f6',
-                    color: selectedCategory === cat ? 'white' : '#374151',
+                    backgroundColor: selectedCategory === cat ? '#2d8f2d' : (isDarkMode ? '#2d2d2d' : '#f3f4f6'),
+                    color: selectedCategory === cat ? 'white' : (isDarkMode ? '#e5e5e5' : '#374151'),
                     border: 'none',
                     borderRadius: '20px',
                     cursor: 'pointer',
@@ -192,7 +178,7 @@ const Practice = () => {
         </div>
 
         {/* Results Count */}
-        <div style={{ marginBottom: '20px', color: '#6b7280', fontSize: '14px' }}>
+        <div style={{ marginBottom: '20px', color: isDarkMode ? '#a3a3a3' : '#6b7280', fontSize: '14px' }}>
           Showing {filteredProblems.length} of {problems.length} problems
         </div>
 
@@ -209,9 +195,9 @@ const Practice = () => {
                 key={problem.id}
                 onClick={() => handleProblemClick(problem.id)}
                 style={{
-                  backgroundColor: 'white',
+                  backgroundColor: isDarkMode ? '#1e1e1e' : 'white',
                   borderRadius: '12px',
-                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                  boxShadow: isDarkMode ? '0 4px 6px rgba(0,0,0,0.4)' : '0 4px 6px rgba(0,0,0,0.1)',
                   padding: '25px',
                   borderLeft: `4px solid ${colors.border}`,
                   cursor: 'pointer',
@@ -219,11 +205,11 @@ const Practice = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 12px rgba(0,0,0,0.15)';
+                  e.currentTarget.style.boxShadow = isDarkMode ? '0 8px 12px rgba(0,0,0,0.6)' : '0 8px 12px rgba(0,0,0,0.15)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                  e.currentTarget.style.boxShadow = isDarkMode ? '0 4px 6px rgba(0,0,0,0.4)' : '0 4px 6px rgba(0,0,0,0.1)';
                 }}
               >
                 <h3 style={{
@@ -235,7 +221,7 @@ const Practice = () => {
                   {problem.title}
                 </h3>
                 <p style={{
-                  color: '#666',
+                  color: isDarkMode ? '#a3a3a3' : '#666',
                   marginBottom: '15px',
                   lineHeight: '1.6'
                 }}>

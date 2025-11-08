@@ -90,3 +90,24 @@
     gap: 10px;
   }
 }
+/* Dark Mode Styles */
+.dark-mode .testimonial-section {
+  background-color: #1e1e1e;
+}
+
+.dark-mode .testimonial-card {
+  background-color: #2d2d2d;
+  border: 1px solid #404040;
+}
+
+.dark-mode .testimonial-text {
+  color: #a3a3a3;
+}
+
+.dark-mode .author-name {
+  color: #e5e5e5;
+}
+
+.dark-mode .author-role {
+  color: #737373;
+}

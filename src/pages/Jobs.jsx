@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { MapPin, Clock, Building, Search, Briefcase, DollarSign, TrendingUp, Filter } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Jobs = () => {
+  const { isDarkMode } = useTheme();
   const [selectedType, setSelectedType] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
@@ -349,7 +351,7 @@ const Jobs = () => {
   return (
     <div style={{
       padding: '60px 20px 20px',
-      backgroundColor: '#f8f9fa',
+      backgroundColor: isDarkMode ? '#121212' : '#f8f9fa',
       minHeight: '100vh'
     }}>
       <div style={{
@@ -363,14 +365,14 @@ const Jobs = () => {
         }}>
           <h1 style={{
             fontSize: '2.5rem',
-            color: '#2d3748',
+            color: isDarkMode ? '#e5e5e5' : '#2d3748',
             marginBottom: '10px',
             fontWeight: 'bold'
           }}>
             💼 Job Opportunities
           </h1>
           <p style={{
-            color: '#718096',
+            color: isDarkMode ? '#a3a3a3' : '#718096',
             fontSize: '1.1rem'
           }}>
             Explore {jobs.length}+ tech job openings from top companies

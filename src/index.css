@@ -109,3 +109,52 @@ button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+/* Dark Mode Styles */
+.dark-mode {
+  --primary-color: #3ba55d;
+  --primary-dark: #2f8d46;
+  --primary-light: #4ade80;
+  --secondary-color: #1e1e1e;
+  --text-dark: #e5e5e5;
+  --text-gray: #a3a3a3;
+  --text-light: #737373;
+  --border-color: #404040;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode body {
+  background-color: #121212;
+  color: #e5e5e5;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #e5e5e5;
+}
+
+.dark-mode p {
+  color: #a3a3a3;
+}
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  background-color: #1e1e1e;
+  color: #e5e5e5;
+  border-color: #404040;
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus,
+.dark-mode select:focus {
+  border-color: #3ba55d;
+  box-shadow: 0 0 0 2px rgba(59, 165, 93, 0.2);
+}
+

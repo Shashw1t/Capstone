@@ -4,6 +4,9 @@ import Editor from '@monaco-editor/react';
 import axios from 'axios';
 import { Play, RotateCcw, Settings, ArrowLeft, CheckCircle, Clock, Users } from 'lucide-react';
 
+// Use environment variable for API URL, fallback to localhost for development
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
 const ProblemSolver = () => {
   const { problemId } = useParams();
   const navigate = useNavigate();
@@ -548,7 +551,7 @@ ${testCalls}
   React.useEffect(() => {
     const fetchTestCases = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/api/test-cases/${problemId}`);
+        const response = await axios.get(`${API_URL}/api/test-cases/${problemId}`);
         if (response.data.success) {
           setTestCaseInputs(response.data.inputs);
           // Regenerate template with actual test inputs
@@ -586,7 +589,7 @@ ${testCalls}
     setOutput('Executing code...\n');
     
     try {
-      const response = await axios.post('http://localhost:3001/api/execute', {
+      const response = await axios.post(`${API_URL}/api/execute`, {
         code: code,
         language: selectedLanguage,
         input: ''
@@ -620,8 +623,8 @@ ${testCalls}
         errorMsg += `Server Error: ${error.response.data.error || 'Unknown error'}\n`;
       } else if (error.request) {
         errorMsg += 'Could not connect to code execution server.\n';
-        errorMsg += 'Make sure the backend server is running on http://localhost:3001\n\n';
-        errorMsg += '🔧 To start the backend:\n';
+        errorMsg += `Backend URL: ${API_URL}\n\n`;
+        errorMsg += '🔧 If running locally:\n';
         errorMsg += '1. Open a new terminal\n';
         errorMsg += '2. cd backend\n';
         errorMsg += '3. npm start\n';
@@ -644,7 +647,7 @@ ${testCalls}
     setOutput('Running test cases...\n');
     
     try {
-      const response = await axios.post('http://localhost:3001/api/validate', {
+      const response = await axios.post(`${API_URL}/api/validate`, {
         code: code,
         language: selectedLanguage,
         problemId: problemId
@@ -702,7 +705,7 @@ ${testCalls}
         errorMsg += `Server Error: ${error.response.data.error || 'Unknown error'}\n`;
       } else if (error.request) {
         errorMsg += 'Could not connect to validation server.\n';
-        errorMsg += 'Make sure the backend server is running on http://localhost:3001\n';
+        errorMsg += `Backend URL: ${API_URL}\n`;
       } else {
         errorMsg += `Error: ${error.message}\n`;
       }
